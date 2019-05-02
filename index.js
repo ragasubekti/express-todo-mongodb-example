@@ -113,6 +113,6 @@ app.delete("/todos/:id", (req, res) => {
   });
 });
 
-app.listen(process.env.APP_PORT, () => {
-  console.log(`Server is now listening on 0.0.0.0:${process.env.APP_PORT}`);
+app.listen(process.env.PORT || process, () => {
+  console.log(`Server is now listening on 0.0.0.0:${process.env.PORT}`);
 });
