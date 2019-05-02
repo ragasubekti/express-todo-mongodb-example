@@ -1,12 +1,9 @@
 const mongoose = require("mongoose");
 
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_COLLECTION_NAME } = process.env;
+const { MONGODB_URI } = process.env;
 
-mongoose.connect(
-  `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_COLLECTION_NAME}`,
-  {
-    useNewUrlParser: true
-  }
-);
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true
+});
 
 module.exports = mongoose;
