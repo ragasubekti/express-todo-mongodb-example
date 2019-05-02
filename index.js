@@ -5,24 +5,12 @@ const mongoose = require("mongoose");
 const { check, validationResult } = require("express-validator/check");
 
 const db = require("./database");
+const Todos = require("./models/todos");
 
 const app = express();
 
 app.use(morgan("dev"));
 app.use(express.json());
-
-const Todos = db.model(
-  "Todos",
-  new mongoose.Schema(
-    {
-      content: String,
-      done: Boolean
-    },
-    {
-      timestamps: {}
-    }
-  )
-);
 
 app.get("/", (req, res) => {
   res.send({
@@ -113,6 +101,6 @@ app.delete("/todos/:id", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT || process, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is now listening on 0.0.0.0:${process.env.PORT}`);
 });
