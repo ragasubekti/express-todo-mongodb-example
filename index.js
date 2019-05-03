@@ -1,7 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const morgan = require("morgan");
-const mongoose = require("mongoose");
 const { check, validationResult } = require("express-validator/check");
 
 const db = require("./database");

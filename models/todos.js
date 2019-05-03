@@ -2,7 +2,7 @@ const db = require("../database");
 
 const Todos = db.model(
   "Todos",
-  new mongoose.Schema(
+  new db.Schema(
     {
       content: String,
       done: Boolean
